@@ -30,3 +30,6 @@ end
 
 gem 'active_model_serializers'
 
+# Use Active Model has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+

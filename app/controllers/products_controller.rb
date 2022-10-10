@@ -3,7 +3,12 @@ class ProductsController < ApplicationController
 
     def index
         products = Product.all
-        render json: products, include: ["supplier", "category"]
+        render json: products, include: ["supplier", "category", "color"]
+    end
+
+    def show
+      product = Product.find(params[:id])
+      render json: product
     end
   
     private
