@@ -1,10 +1,7 @@
 class ReviewsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
-
-# def index
-#   reviews = Review.all
-#   render json: reviews, include: :product
-# end
+  before_action :authorize
+  skip_before_action :authorize, only: [:index, :show]
 
 def index
   if params[:product_id]
@@ -26,6 +23,18 @@ def create
   render json: review, status: :created
 end
 
+def update
+  review = Review.find(params[:id])
+  review.update(review_params)
+  render json: review
+end
+
+def destroy
+  review = Review.find(params[:id])
+  review.destroy
+  head :no_content
+end
+
 private
 
 def render_not_found_response
@@ -34,5 +43,9 @@ end
 
 def review_params
   params.permit(:user_id, :product_id, :comment, :rating)
+end
+
+def authorize
+  return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
 end
 end
