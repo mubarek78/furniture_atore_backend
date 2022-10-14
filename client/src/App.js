@@ -1,43 +1,32 @@
-import { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Home from './pages/Home';
-import Cart from './pages/cart';
-import Login from './pages/login';
-import Productdetail from './pages/productdetail';
+import React from 'react';
+import Register from './page/register'
+import Login from './page/login'
+
+import MyAccounts from './page/my-account/index';
+// import { Counter } from './features/counter/Counter';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import ShopPage from './pages/shop';
+import Nav from './component/Nav/Nav';
+import ShopGrid from './page/shop';
+import ProductDetails from './page/product/index';
+import Cart from './page/cart/index';
+import Checkout from './component/Checkout';
+import Error from './page/error';
+import Furniture from './page/furniture';
 
 function App() {
-  const [user, setUser] = useState(null);
-console.log(user)
-  // useEffect(() => {
-  //   fetch("/me").then((response) => {
-  //     if (response.ok) {
-  //       response.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
-
-  function handleLogin(user) {
-    setUser(user);
-    console.log(user)
-  }
-
-  function handleLogout() {
-    setUser(null);
-  }
-
-
   return (
     <BrowserRouter>
     <Routes>
-    <Route path="/" element={<Home />}/>
-    <Route path="/login" element={<Login onLogin={handleLogin} />}/>  
+    <Route path="/" element={<Furniture />}/>
+    <Route path="/register" element={<Register />}/>
+    <Route path="/login" element={<Login />}/>
+    <Route path="/my-account" element={<MyAccounts />}/>
+    <Route path="/shop" element={<ShopGrid />}/>
+    <Route path='/product-details-one/:id'  element={<ProductDetails/>} />
     <Route path="/cart" element={<Cart />}/>
-    <Route path="/shop" element={<ShopPage />}/>
-    <Route path='/product-details/:id' element={<Productdetail />}/>
-      </Routes>
+    <Route path="/checkout-one" element={<Checkout />}/>
+    <Route path='*' element={<Error />} />
+    </Routes>
     </BrowserRouter>
   );
 }

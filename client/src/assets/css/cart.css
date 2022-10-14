@@ -1,57 +1,44 @@
-#cart{
-    margin-top: 20px;
-}
 
-#cart .header{
-    border: 1px solid #ededed;
-    padding: 20px 20px 20px 0px;
-    background-color: #fffdc2;
-}
 
-#cart td {
+tbody tr td {
     border: 1px solid #ededed;
-    text-align: center; 
-    font-weight: 600;
+    text-align: center;
+    padding: 10px; 
+    font-weight: 500;
     text-transform: capitalize;
-    padding: 8px; 
 }
 
 
-td.remove {
-    width: 180px;
+td.remove_product {
+    min-width: 180px;
     font-size: 30px;
 }
 
-td.remove button{
-    background: transparent;
-    border: none;
-    color: red;
+ td.product_thumbnel {
+    max-width: 280px;
+    overflow: hidden;
 }
 
- td.thumbnel
-  {
-    width: 170px;
-}
-
- td.thumbnel img {
+ td.product_thumbnel img {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
- td.title {
-    width: 310px;
+ td.product_title {
+    min-width: 250px;
 }
 
- td.price,
- td.quantity,
- td.total
-  {
+ td.price {
     min-width: 280px;
     font-size: 20px;
     font-weight: 600;
     color: rgb(35, 35, 35);
+}
+
+ td.quantity {
+    min-width: 280px;
 }
 
  td.quantity label {
@@ -62,11 +49,18 @@ td.remove button{
  td.quantity input {
     height: 35px;
     width: 80px;
+    background: none;
     padding: 0 7px 0 12px;
-    border: 1px dotted #d6d6d6;
+    border: 1px solid #d6d6d6;
 }
 
+ td.product_addcart {
+    min-width: 280px;
+}
 
+td.total{
+    min-width: 280px;
+}
 
 .sub_total{
     width: 35%;

@@ -1,0 +1,367 @@
+
+.navbar {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    overflow: auto;
+    height: 100vh;
+    padding: 20px;
+    transition: all 0.5s ease;
+    transform: translateX(100%);
+    box-shadow: none;
+    background: #FFF;
+    width: 300px;
+    overflow-x: hidden;
+}
+
+@media (min-width: 576px) {
+    .navbar {
+        width: 450px;
+    }
+}
+
+.navbar-leftside {
+    left: 0%;
+    transform: translateX(-100%);
+}
+
+.navbar-rightside {
+    right: 0%;
+    transform: translateX(100%);
+}
+
+.navbar.navbar-open {
+    transform: translateX(0);
+}
+
+.navbar-overlay {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-header {
+    margin-bottom: 30px;
+}
+
+.navbar-close {
+    width: 40px;
+    height: 40px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+.navbar-close:hover {
+    color: red;
+}
+
+.navbar-title {
+    margin-bottom: 40px;
+}
+
+.navbar-mobile-menu-section,
+.navbar-mobile-about-section {
+    background: #24262b !important;
+}
+
+.navbar-mobile-menu-section .navbar-close,
+.navbar-mobile-about-section .navbar-close {
+    color: #FFF;
+}
+
+
+/*Mobile Menu Bottom Area*/
+
+.navbar-menu {
+    margin: 20px 0;
+}
+
+.navbar-menu li {
+    position: relative;
+    padding: 7px 5px;
+}
+
+.navbar-menu>ul>li {
+    border-bottom: 1px solid transparent;
+}
+
+.navbar-menu>ul>li:last-child {
+    border-bottom: none;
+}
+
+.navbar-menu li a {
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.navbar-menu li a.active {
+    color: var(--main-theme-color);
+}
+
+.navbar-menu li a:hover {
+    color: var(--main-theme-color);
+}
+
+.navbar-menu-expand::after {
+    position: absolute;
+    ;
+    right: 0;
+    transition: all 0.3s ease;
+    color: #FFF;
+    font-family: "Font Awesome 5 Free";
+    content: "\f0dd";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+}
+
+.navbar-menu .active>.navbar-menu-expand:last-child,
+.sub-menu>.active .navbar-menu-expand:last-child {
+    border-bottom: none;
+}
+
+.navbar-menu .active>.navbar-menu-expand::after,
+.sub-menu>.active .navbar-menu-expand::after {
+    color: var(--main-theme-color);
+    transform: rotate(90deg);
+}
+
+
+/*Mobile Menu Contact Info*/
+
+.mobile-contact-info {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 65px;
+}
+
+.mobile-contact-info .logo {
+    margin: 0 auto;
+    width: 200px;
+}
+
+.mobile-contact-info .logo img {
+    width: 100%;
+    height: auto;
+}
+
+.mobile-contact-info .address {
+    margin-top: 30px;
+    color: #FFF;
+}
+
+.mobile-contact-info .address span {
+    display: block;
+}
+
+.mobile-contact-info .social-link li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.mobile-contact-info .social-link li:last-child {
+    margin-right: 0;
+}
+
+.mobile-contact-info .social-link li a {
+    display: block;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #2f3239;
+    color: #FFF;
+    transition: all 0.5s ease;
+    font-size: 16px;
+}
+
+.mobile-contact-info .social-link li a:hover {
+    background: #FFF;
+    color: #2f3239;
+}
+
+.mobile-contact-info .user-link {
+    margin-top: 30px;
+}
+
+.mobile-contact-info .user-link li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.mobile-contact-info .user-link li:last-child {
+    margin-right: 0;
+}
+
+.mobile-contact-info .user-link li a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.mobile-contact-info .user-link li a:hover {
+    color: var(--main-theme-color);
+}
+
+.navbar-cart-item-single {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.navbar-cart-item-single:last-child {
+    margin-bottom: 0;
+}
+
+.navbar-cart-item-block {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-cart-item-image-link {
+    width: 90px;
+    overflow: hidden;
+    border: 1px solid #ededed;
+    margin-right: 20px;
+}
+
+.navbar-cart-image {
+    width: 100%;
+}
+
+.navbar-cart-item-link {
+    display: block;
+    font-weight: 700;
+}
+
+.navbar-cart-item-link:hover {
+    color: #24262b;
+}
+
+.navbar-cart-total-price {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+.navbar-cart-total-price-text {
+    font-weight: 700;
+}
+
+.navbar-cart-action-button-list {
+    margin-bottom: 25px;
+    display: block;
+}
+
+.navbar-cart-item-delete {
+    color: red;
+}
+
+.navbar-cart-item-delete:hover {
+    color: red;
+}
+
+.navbar-cart-action-button-link {
+    display: block;
+    background: #24262b;
+    color: #FFF;
+    padding: 10px 30px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px border transparent;
+}
+
+.navbar-cart-action-button-link:hover {
+    background: #FFF;
+    color: #24262b;
+    border: 1px border #24262b !important;
+}
+
+.navbar-wishlist-item-single {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.navbar-wishlist-item-single:last-child {
+    margin-bottom: 0;
+}
+
+.navbar-wishlist-item-block {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-wishlist-item-image-link {
+    width: 90px;
+    overflow: hidden;
+    border: 1px solid #ededed;
+    margin-right: 20px;
+}
+
+.navbar-wishlist-image {
+    width: 100%;
+}
+
+.navbar-wishlist-item-link {
+    display: block;
+    font-weight: 700;
+}
+
+.navbar-wishlist-item-link:hover {
+    color: #24262b;
+}
+
+.navbar-wishlist-total-price-text {
+    font-weight: 700;
+}
+
+.navbar-wishlist-action-button {
+    margin-top: 40px;
+}
+
+.navbar-wishlist-action-button-list {
+    margin-bottom: 25px;
+    display: block;
+}
+
+.navbar-wishlist-item-delete {
+    color: red;
+}
+
+.navbar-wishlist-item-delete:hover {
+    color: red;
+}
+
+.navbar-wishlist-action-button-link {
+    display: block;
+    background: #24262b;
+    color: #FFF;
+    padding: 10px 30px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: 1px border transparent;
+}
+
+.navbar-wishlist-action-button-link:hover {
+    background: #24262b;
+    color: #FFF;
+    border: 1px border #24262b !important;
+}
