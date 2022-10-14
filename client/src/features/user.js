@@ -10,26 +10,22 @@ const userSlice = createSlice({
     reducers: {
          // Signup
          signup: (state, action) => {
-            let { user, email, password } = action.payload;
+            
+            let {id, username, email, password_digest} = action.payload.payload;
             state.status = true
-            state.user = {
-                name: user,
-                email: email,
-                password: password,
-                role: 'customer'
-               
+            state.user = {id,
+                          username, 
+                          email,
+                          password: password_digest
             }
+            console.log(state.user)
            
         },
         // Login
-        login: (state) => {
+        login: (state, action) => {
+            let { username, email, password_digest} = action.payload.payload;
             state.status = true
-            state.user = {
-                name: 'Dummy Dum',
-                email: 'dummy@yahoo.com',
-                password:'123456',
-                role: 'customer'
-            }
+            state.user = {username, email, password: password_digest}
             
         },
        
@@ -41,5 +37,6 @@ const userSlice = createSlice({
     }
 })
 
+export const { signup, login} = userSlice.actions;
 const userReducer = userSlice.reducer
 export default userReducer

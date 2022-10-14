@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import sublinks from "../component/Nav/data";
+import sublinks from "../components/Nav/NavData";
 
 // Settings Slice
 const settingsSlice = createSlice({
@@ -12,11 +12,13 @@ const settingsSlice = createSlice({
     },
     reducers: {
         openSidebar: (state) => {
-            state.isSidebarOpen = true
+            state.isSidebarOpen = !state.isSidebarOpen
+            console.log(state.isSidebarOpen)
           },
 
           closeSidebar: (state) => {
-            state.isSidebarOpen = false
+            state.isSidebarOpen = !state.isSidebarOpen
+            console.log(state.isSidebarOpen)
           },
            openSubmenu: (state, action) => {
             let {text, center, bottom} = action.payload
