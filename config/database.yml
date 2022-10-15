@@ -4,22 +4,45 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem "sqlite3"
 #
-default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
 
-development:
-  <<: *default
-  database: db/development.sqlite3
+# default: &default
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
+
+# development:
+#   <<: *default
+#   database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+
+# test:
+#   <<: *default
+#   database: db/test.sqlite3
+
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: mubarek
+  password: 092s866876 #<-- which you have defiend while installing postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: react_rails_api_project_template_development
+
 test:
   <<: *default
-  database: db/test.sqlite3
+  database: react_rails_api_project_template_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: react_rails_api_project_template_production
+  username: react_rails_api_project_template
+  password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
