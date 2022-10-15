@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :api do
+
   # resources :reviews
   resources :users, only: [:index]
   # resources :product_colors
@@ -32,6 +32,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-end
+
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
