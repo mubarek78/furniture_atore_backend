@@ -45,4 +45,4 @@ production:
   <<: *default
   database: react_rails_api_project_template_production
   username: react_rails_api_project_template
-  password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
+  password: <%= ENV['REACT_RAILS_API_PROJECT_TEMPLATE_DATABASE_PASSWORD'] %>
